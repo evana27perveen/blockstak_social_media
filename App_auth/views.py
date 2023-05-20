@@ -56,13 +56,9 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         # user = authenticate(username=user_email, password=user_password)
         refresh = RefreshToken.for_user(user)
 
-        groups = Group.objects.filter(user=user)
-        group_names = [group.name for group in groups]
-
         response_data = {
             'refresh': str(refresh),
             'access': str(refresh.access_token),
-            'group': group_names[0],
         }
 
         return Response(response_data, status=status.HTTP_200_OK)
