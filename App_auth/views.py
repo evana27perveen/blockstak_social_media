@@ -20,7 +20,7 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializers
 
     def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data, context={"group_name": request.data['group_name']})
+        serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             self.perform_create(serializer)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -62,6 +62,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         response_data = {
             'refresh': str(refresh),
             'access': str(refresh.access_token),
+            'group': group_names[0],
         }
 
         return Response(response_data, status=status.HTTP_200_OK)
