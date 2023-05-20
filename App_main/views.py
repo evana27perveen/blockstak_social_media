@@ -25,7 +25,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        print(request.user)
         serializer = self.get_serializer(data=request.data, context={'user': request.user.id})
         serializer.is_valid(raise_exception=True)
         serializer.save()
