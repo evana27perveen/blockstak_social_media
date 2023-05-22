@@ -58,12 +58,26 @@ class ShareSerializer(serializers.ModelSerializer):
     class Meta:
         model = Share
         fields = ('id', 'user', 'post', 'created_at')
+        
+    def create(self, validated_data):
+        share = Share.objects.create(
+            post = validated_data['post'], 
+            user = validated_data['user']
+            )
+        return share
+        
+        
 
 
 class ConnectionSerializer(serializers.ModelSerializer):
-    user = UserSerializers()
-    connection = UserSerializers()
-
     class Meta:
         model = Connection
-        fields = ['user', 'connection', 'created_at']
+        fields = ['connection', 'created_at']
+        read_only_fields = ['created_at']
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        connection = validated_data['connection']
+        connection_instance = Connection.objects.create(user=user, connection=connection)
+        return connection_instance
+        
