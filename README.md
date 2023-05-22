@@ -9,10 +9,11 @@ To set up the project locally, follow these steps:
 1. Go to your cmd of particular floder and write the following instructions without quatations
 2. `git clone https://github.com/evana27perveen/blockstak_social_media.git`
 3. `cd blockstak_social_media`
-4. `myenv\Scripts\activate`
-5. `pip install -r requirements.txt`
-6. `python manage.py migrate`
-7. `python manage.py runserver`
+4. `python -m venv venv`
+5. `venv\Scripts\activate`
+6. `pip install -r requirements.txt`
+7. `python manage.py migrate`
+8. `python manage.py runserver`
 The application will be accessible at http://localhost:8000.
 
 # Features
