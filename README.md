@@ -17,11 +17,17 @@ The application will be accessible at http://localhost:8000.
 
 # Features
 User Authentication: Users can create accounts and authenticate using their email or phone number.
+
 Profiles: Users can create profiles with their full name, profile picture, bio, and social media accounts.
+
 Posts: Users can create posts with a title, text, and an optional image.
+
 Comments: Users can comment on posts.
+
 Likes: Users can like posts.
+
 Shares: Users can share posts.
+
 Connections: Users can establish connections with other users.
 
 # API Endpoints
