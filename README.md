@@ -56,7 +56,7 @@ AWS S3 (for storing media files)
 Python
 
 # Credits
-The project was developed by ** Evana Perveen Eva **.
+The project was developed by **Evana Perveen Eva**
 
 
 
