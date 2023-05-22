@@ -1,1 +1,62 @@
 # blockstak_social_media
+The project is a social media application built using Django and Django REST Framework.
+
+# Project Description
+The social media application allows users to create profiles, make posts, comment on posts, like posts, share posts, and establish connections with other users. It provides APIs for various operations such as creating and updating profiles, creating and retrieving posts, commenting on posts, liking posts, sharing posts, searching for posts, and managing user connections.
+
+# Installation
+To set up the project locally, follow these steps:
+1. Go to your cmd of particular floder and write the following instructions without quatations
+2. `git clone https://github.com/evana27perveen/blockstak_social_media.git`
+3. `cd blockstak_social_media`
+4. `myenv\Scripts\activate`
+5. `pip install -r requirements.txt`
+6. `python manage.py migrate`
+7. `python manage.py runserver`
+The application will be accessible at http://localhost:8000.
+
+# Features
+User Authentication: Users can create accounts and authenticate using their email or phone number.
+Profiles: Users can create profiles with their full name, profile picture, bio, and social media accounts.
+Posts: Users can create posts with a title, text, and an optional image.
+Comments: Users can comment on posts.
+Likes: Users can like posts.
+Shares: Users can share posts.
+Connections: Users can establish connections with other users.
+
+# API Endpoints
+The project provides the following API endpoints:
+
+POST /api/auth/user/create/: Create a user account.
+POST /api/auth/login/: Login and obtain an access token.
+POST /api/auth/login/refresh/: Refresh the access token.
+GET /api/main/profiles/: List all profiles.
+POST /api/main/profiles/: Create a profile.
+GET /api/main/profiles/my-operations/: Retrieve the authenticated user's profile.
+PUT /api/main/profiles/my-operations/: Update the authenticated user's profile.
+GET /api/main/posts/: List all posts.
+POST /api/main/posts/create/: Create a post.
+GET /api/main/posts/{id}/: Retrieve a post by ID.
+GET /api/main/comments/: List all comments.
+POST /api/main/comments/create/: Create a comment.
+GET /api/main/likes/: List all likes.
+POST /api/main/likes/create/: Like a post.
+GET /api/main/shares/: List all shares.
+POST /api/main/shares/create/: Share a post.
+GET /api/main/posts/search/: Search posts by title.
+GET /api/main/connections/: List all connections.
+POST /api/main/connections/: Create a connection.
+GET /api/main/connections/{id}/: Retrieve a connection by ID.
+
+# Technologies Used
+Django
+Django REST Framework
+PostgreSQL (as the database)
+AWS S3 (for storing media files)
+Python
+
+# Credits
+The project was developed by ** Evana Perveen Eva **.
+
+
+
