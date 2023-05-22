@@ -27,32 +27,31 @@ Connections: Users can establish connections with other users.
 # API Endpoints
 The project provides the following API endpoints:
 
-POST /api/auth/user/create/: Create a user account.
-POST /api/auth/login/: Login and obtain an access token.
-POST /api/auth/login/refresh/: Refresh the access token.
-GET /api/main/profiles/: List all profiles.
-POST /api/main/profiles/: Create a profile.
-GET /api/main/profiles/my-operations/: Retrieve the authenticated user's profile.
-PUT /api/main/profiles/my-operations/: Update the authenticated user's profile.
-GET /api/main/posts/: List all posts.
-POST /api/main/posts/create/: Create a post.
-GET /api/main/posts/{id}/: Retrieve a post by ID.
-GET /api/main/comments/: List all comments.
-POST /api/main/comments/create/: Create a comment.
-GET /api/main/likes/: List all likes.
-POST /api/main/likes/create/: Like a post.
-GET /api/main/shares/: List all shares.
-POST /api/main/shares/create/: Share a post.
-GET /api/main/posts/search/: Search posts by title.
-GET /api/main/connections/: List all connections.
-POST /api/main/connections/: Create a connection.
-GET /api/main/connections/{id}/: Retrieve a connection by ID.
+1. POST /api/auth/user/create/: Create a user account.
+2. POST /api/auth/login/: Login and obtain an access token.
+3. POST /api/auth/login/refresh/: Refresh the access token.
+4. GET /api/main/profiles/: List all profiles.
+5. POST /api/main/profiles/: Create a profile.
+6. GET /api/main/profiles/my-operations/: Retrieve the authenticated user's profile.
+7. PUT /api/main/profiles/my-operations/: Update the authenticated user's profile.
+8. GET /api/main/posts/: List all posts.
+9. POST /api/main/posts/create/: Create a post.
+10. GET /api/main/posts/{id}/: Retrieve a post by ID.
+11. GET /api/main/comments/: List all comments.
+12. POST /api/main/comments/create/: Create a comment.
+13. GET /api/main/likes/: List all likes.
+14. POST /api/main/likes/create/: Like a post.
+15. GET /api/main/shares/: List all shares.
+16. POST /api/main/shares/create/: Share a post.
+17. GET /api/main/posts/search/: Search posts by title.
+18. GET /api/main/connections/: List all connections.
+19. POST /api/main/connections/: Create a connection.
+20. GET /api/main/connections/{id}/: Retrieve a connection by ID.
 
 # Technologies Used
 Django
 Django REST Framework
-PostgreSQL (as the database)
-AWS S3 (for storing media files)
+MongoDB (as the database)
 Python
 
 # Credits
