@@ -50,8 +50,11 @@ The project provides the following API endpoints:
 
 # Technologies Used
 Django
+
 Django REST Framework
+
 MongoDB (as the database)
+
 Python
 
 # Credits
