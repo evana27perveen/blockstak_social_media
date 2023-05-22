@@ -9,6 +9,8 @@ from App_main.serializers import (
     ConnectionSerializer, LikeSerializer, ShareSerializer,
 )
 
+from App_auth.models import CustomUser
+
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
@@ -160,19 +162,14 @@ class PostSearchView(generics.ListAPIView):
         return queryset
 
 
-class ConnectionViewSet(viewsets.ModelViewSet):
-    queryset = Connection.objects.all()
+class ConnectionListCreateView(generics.ListCreateAPIView):
     serializer_class = ConnectionSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    def get_queryset(self):
+        user = self.request.user
+        return Connection.objects.filter(user=user)
 
-    def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
-        queryset = queryset.filter(user=request.user)
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+    def perform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user=user)
